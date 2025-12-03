@@ -7,12 +7,16 @@
 #include <QProgressDialog>
 #include <QThread>
 #include <QMessageBox>
+#include <QTimer>
+#include <QProgressBar>
 
 namespace Ui {
 class RestaurantMenuWindow;
 }
 
 //======================================================================================
+
+#define DEFAULT_TIME 60 // 60s = 1 minute
 
 struct MenuPrices
 {
@@ -55,15 +59,21 @@ public:
     explicit RestaurantMenuWindow(QWidget *parent = nullptr);
     ~RestaurantMenuWindow();
 
-protected:
+private slots:
     void PlaceOrderBtnClicked();
+
+protected:
     double CalculateCurrentPrice();
+    void ChangeHeatLevel(int pos);
+    void ShowTimerProgressDlg(int totalTime, QWidget *parent = nullptr);
+    QString FindCurrentProcess(int currentTime, int totalTime);
 
 private:
     Ui::RestaurantMenuWindow *ui;
     double m_dCurrentPrice;
     int m_iMealIndex;
     int m_iDrinkIndex;
+    int m_iMealQuantity;
     MenuPrices prices;
 };
 
