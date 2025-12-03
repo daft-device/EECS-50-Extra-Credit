@@ -28,10 +28,8 @@ MainWindow::~MainWindow()
  */
 void MainWindow::StartBtnClicked()
 {
-    RestaurantMenuWindow* dialog = new RestaurantMenuWindow(this);
-    dialog->exec();
-    delete dialog;
-    dialog = nullptr;
+    RestaurantMenuWindow menuDlg(this);
+    menuDlg.exec();
 }
 
 //======================================================================================
