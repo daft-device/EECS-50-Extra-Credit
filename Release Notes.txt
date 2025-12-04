@@ -1,0 +1,6 @@
+Release Notes
+
+- V2:
+  In order to use our Qt-based program, please download and extract the released bundle as a whole.
+  After doing so, simply run RestaurantUISimulator.exe on a Windows PC.
+  The release bundle will include the necessary files to function cleanly on Windows, but not Linux or MacOS.
